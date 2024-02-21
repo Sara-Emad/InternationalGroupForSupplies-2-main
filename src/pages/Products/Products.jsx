@@ -218,7 +218,7 @@ const Products = () => {
                         >
                           <Button
                             onClick={() => {
-                              expandModal(item), newArr();
+                              expandModal(item), setArr;
                             }}
                             className="link flex"
                             sx={{

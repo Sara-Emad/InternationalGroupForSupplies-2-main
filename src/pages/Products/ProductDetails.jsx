@@ -19,20 +19,20 @@ export const myProjects = [
   
   {
     projectTitle: "seeds",
-    category: ["seeds"],
+    category: "seeds",
     imgPath: "public/images/5.jpg",
   },
 
   {
     projectTitle: "fruits",
-    category: ["fruits"],
+    category: "fruits",
     imgPath: "public/images/5.jpg",
   },
   
 
   {
     projectTitle: "vegetables",
-    category: ["vegetables"],
+    category: "vegetables",
     imgPath: "public/images/3.jpg",
   },
   
