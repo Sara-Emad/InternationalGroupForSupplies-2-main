@@ -1,4 +1,4 @@
-import { Box, Button, Container, Typography, useTheme } from "@mui/material";
+import { Box, Button,Typography, useTheme } from "@mui/material";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -30,8 +30,8 @@ const Home = () => {
   const theme = useTheme();
 
   return (
-    <Container>
-      <Box sx={{ mt: 1, display: "flex", alignItems: "center", gap: 2 }}>
+    <>
+      <Box sx={{  display: "flex", alignItems: "center", gap: 2 }}>
         <Swiper 
         modules={[Pagination, Autoplay, Navigation, Scrollbar, A11y]}
           loop={true}
@@ -137,7 +137,7 @@ const Home = () => {
           })}
         </Swiper>
       </Box>
-    </Container>
+    </>
   );
 };
 
