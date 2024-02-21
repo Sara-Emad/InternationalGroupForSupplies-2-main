@@ -18,7 +18,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useTheme } from "@emotion/react";
 import { Close } from "@mui/icons-material";
 
-
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
@@ -40,7 +39,6 @@ const style = {
 };
 
 const Products = () => {
-
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
 
@@ -54,26 +52,23 @@ const Products = () => {
     setModalIsOpen(false);
   };
 
-
-
-
   const theme = useTheme();
   const [currentActive, setcurrentActive] = useState("all");
   const [arr, setArr] = useState(myProjects);
 
-  const handleClick = (ButtonCategory) => {
-    setcurrentActive(ButtonCategory);
+  // const handleClick = (ButtonCategory) => {
+  //   setcurrentActive(ButtonCategory);
 
-    const newArr = myProjects.filter((item) => {
-      const ZZZ = item.category.find((myItem) => {
-        return myItem === ButtonCategory;
-      });
+  //   // const newArr = myProjects.filter((item) => {
+  //   //   const ZZZ = item.category.find((myItem) => {
+  //   //     return myItem === ButtonCategory;
+  //   //   });
 
-      return ZZZ === ButtonCategory;
-    });
+  //   //   return ZZZ === ButtonCategory;
+  //   // });
 
-    setArr(newArr);
-  };
+  //   // setArr(newArr);
+  // };
   return (
     <Container sx={{ my: 4, flexGrow: 1 }}>
       <Grid
@@ -117,7 +112,11 @@ const Products = () => {
 
             <Button
               onClick={() => {
-                handleClick("Herbs");
+                setcurrentActive("Herbs");
+                const newArr = myProjects.filter((item) => {
+                  return item.category === "Herbs";
+                });
+                setArr(newArr);
               }}
               className={currentActive === "Herbs" ? "active" : null}
             >
@@ -126,16 +125,24 @@ const Products = () => {
 
             <Button
               onClick={() => {
-                handleClick("seeds");
+                setcurrentActive("seeds");
+                const newArr = myProjects.filter((item) => {
+                  return item.category === "seeds";
+                });
+                setArr(newArr);
               }}
               className={currentActive === "seeds" ? "active" : null}
             >
-            seeds
+              seeds
             </Button>
 
             <Button
               onClick={() => {
-                handleClick("fruits");
+                setcurrentActive("fruits");
+                const newArr = myProjects.filter((item) => {
+                  return item.category === "fruits";
+                });
+                setArr(newArr);
               }}
               className={currentActive === "fruits" ? "active" : null}
             >
@@ -144,7 +151,11 @@ const Products = () => {
 
             <Button
               onClick={() => {
-                handleClick("vegetables");
+                setcurrentActive("vegetables");
+                const newArr = myProjects.filter((item) => {
+                  return item.category === "vegetables";
+                });
+                setArr(newArr);
               }}
               className={currentActive === "vegetables" ? "active" : null}
             >
@@ -152,7 +163,7 @@ const Products = () => {
             </Button>
           </Stack>
         </Grid>
-        <Grid item md={10} >
+        <Grid item md={10}>
           <Stack
             direction="row"
             sx={{ display: "flex", flexWrap: "wrap", gap: 5 }}
@@ -207,8 +218,8 @@ const Products = () => {
                         >
                           <Button
                             onClick={() => {
-                              expandModal(item) , handleClick()
-                            } }
+                              expandModal(item), setArr();
+                            }}
                             className="link flex"
                             sx={{
                               width: "6px",
@@ -311,9 +322,7 @@ const Products = () => {
                 {selectedProject && selectedProject.projectTitle}
               </Typography>
 
-              <Typography variant="body1">
-                
-              </Typography>
+              <Typography variant="body1"></Typography>
             </Box>
           </Box>
         </Box>

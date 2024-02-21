@@ -2,12 +2,21 @@ export const myProjects = [
 
   {
     projectTitle: "Moringa",
-    category: ["Herbs"],
+    category: "Herbs",
     imgPath: "public/images/3.jpg",
   },
-   // ======================================
-  // seeds
-  // =======================================
+  
+  {
+    projectTitle: "hhhhhhh",
+    category: "Herbs",
+    imgPath: "public/images/3.jpg",
+  },
+  {
+    projectTitle: "eeeeeeeee",
+    category: "Herbs",
+    imgPath: "public/images/3.jpg",
+  },
+  
   {
     projectTitle: "seeds",
     category: ["seeds"],
@@ -24,12 +33,9 @@ export const myProjects = [
   {
     projectTitle: "vegetables",
     category: ["vegetables"],
-    imgPath: "public/images/5.jpg",
+    imgPath: "public/images/3.jpg",
   },
   
-  {
-    projectTitle: "vegetables",
-    category: ["vegetables"],
-    imgPath: "public/images/5.jpg",
-  },
+
 ];
+
